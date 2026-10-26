@@ -1,0 +1,25 @@
+{
+  "name": "traffic-counter",
+  "version": "1.0.0",
+  "description": "Privacy-friendly, cookie-free web analytics and visit counter. One small Node.js server, SQLite, zero dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "author": "bawcejawn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bawcejawn/Traffic-Counter.git"
+  },
+  "bin": {
+    "traffic-counter": "bin/traffic-counter.js"
+  },
+  "scripts": {
+    "start": "node bin/traffic-counter.js serve",
+    "dev": "DB_PATH=./data/dev.db node --watch bin/traffic-counter.js serve",
+    "test": "node --test --no-warnings test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "keywords": ["analytics", "web-analytics", "privacy", "visit-counter", "hit-counter", "goatcounter-alternative", "self-hosted", "sqlite"],
+  "files": ["bin", "src", "public"]
+}

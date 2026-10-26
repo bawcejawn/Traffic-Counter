@@ -1,0 +1,14 @@
+services:
+  traffic-counter:
+    build: .
+    # or use the published image: ghcr.io/bawcejawn/traffic-counter:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      # Set to 1 when running behind a reverse proxy (Caddy, nginx, Cloudflare…)
+      TRUST_PROXY: "1"
+      # Cloudflare adds the visitor's country in this header
+      COUNTRY_HEADER: "cf-ipcountry"
+    volumes:
+      - ./data:/data
